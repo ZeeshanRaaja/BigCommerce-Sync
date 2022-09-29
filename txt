@@ -1,0 +1,40 @@
+jQuery(document).ready(function($){ 
+    $("#btnSubmit").on("click",function(){
+        var hidden_value = 4234;
+        console.log(hidden_value);
+        jQuery.ajax({
+            url:   ajax_object.ajaxurl,
+            type: 'POST',
+            data: {  
+                action: 'test',  
+                hidden_value: hidden_value 
+            },
+            success: function (data) {
+                console.log("Succuess");
+                console.log(data);
+             }
+        });
+    });
+});
+
+
+
+
+$body = json_encode([
+			
+    "name" => $product_name,
+    "price" => $sale_price,
+    "type" => $product_type,
+    "description" => $product_description
+
+ ]);
+
+ 
+ $body = json_encode([
+ 
+     "name" => "SK",
+     "price" => "190",
+     "type" => "physical",
+     "description" => "this is sk"
+
+  ]);
